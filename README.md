@@ -2,7 +2,7 @@
 <br />
 
 ## Introduction
-The main reason for developing this library is to provide an easy way for quality engineers or automation engineers to spin-up any broswer instance in any platform without any configurations.
+The main reason for developing this library is to provide an easy way for quality engineers or automation engineers to spin-up any browser instance in any platform without any configurations.
 <br /><br />
 
 ## Technologies/Frameworks used
