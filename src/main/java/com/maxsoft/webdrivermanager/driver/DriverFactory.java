@@ -23,8 +23,8 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class DriverFactory {
 
-    private static final String WINDOW_WIDTH = System.getenv("window_width");
-    private static final String WINDOW_HEIGHT = System.getenv("window_height");
+    private static final String WINDOW_WIDTH = "1440";
+    private static final String WINDOW_HEIGHT = "900";
     private static final String WINDOW_SIZE = "--window-size=" + WINDOW_WIDTH + "x" + WINDOW_HEIGHT;
     public static final String HEADLESS_CHROME = "headless-chrome";
     public static final String FIREFOX = "firefox";
