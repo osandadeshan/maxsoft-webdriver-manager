@@ -2,7 +2,7 @@
 <br />
 
 ## Introduction
-The main reason for developing this library is to provide an easy way for quality engineers or automation engineers to spinup any broswer istance in any platform without any configurations.
+The main reason for developing this library is to provide an easy way for quality engineers or automation engineers to spin-up any broswer istance in any platform without any configurations.
 <br /><br />
 
 ## Technologies/Frameworks used
