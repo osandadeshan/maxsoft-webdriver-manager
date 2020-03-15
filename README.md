@@ -25,7 +25,7 @@ The main reason for developing this library is to provide an easy way for qualit
 
 ## Advantages
 - No need of any configurations
-- All broswers are embeded
+- All browsers are embedded
 - Easy to use
 - Platform independent
 <br />
