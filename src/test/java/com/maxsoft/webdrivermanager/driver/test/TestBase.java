@@ -14,7 +14,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * Description     :
  **/
 
-
 public class TestBase {
 
     public void testDriver(WebDriver driver, String browserName){
@@ -25,6 +24,5 @@ public class TestBase {
         driver.get("http://automationpractice.com/");
         Assert.assertEquals("My Store", driver.getTitle());
     }
-
 
 }

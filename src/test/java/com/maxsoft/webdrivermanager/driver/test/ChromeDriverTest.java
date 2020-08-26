@@ -16,7 +16,6 @@ import org.openqa.selenium.remote.BrowserType;
  * Description     : This is an example of how to use maxsoft-webdrivermanager for chrome driver
  **/
 
-
 public class ChromeDriverTest extends TestBase {
 
     // Holds the WebDriver instance
@@ -39,6 +38,5 @@ public class ChromeDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 
 }
