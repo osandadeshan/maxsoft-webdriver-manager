@@ -24,7 +24,7 @@ public class InvalidDriverTest extends TestBase {
     // Initialize an invalid driver instance
     @Before
     public void initializeDriver() {
-        driver = DriverFactory.getDriver("invalid");
+        driver = DriverFactory.getDriver("tor");
         driver.manage().window().maximize();
     }
 
