@@ -20,75 +20,64 @@ import org.openqa.selenium.safari.SafariDriver;
  * Description     : This class will instantiate the browser instance. In your project, you can call WebDriver driver = DriverFactory.getDriver("chrome");
  **/
 
-
 public class DriverFactory {
 
-    private static final String WINDOW_WIDTH = "1440";
-    private static final String WINDOW_HEIGHT = "900";
-    private static final String WINDOW_SIZE = "--window-size=" + WINDOW_WIDTH + "x" + WINDOW_HEIGHT;
+    public static final String CHROME = "chrome";
     public static final String HEADLESS_CHROME = "headless-chrome";
     public static final String FIREFOX = "firefox";
     public static final String HEADLESS_FIREFOX = "headless-firefox";
     public static final String IE = "ie";
     public static final String EDGE = "edge";
     public static final String SAFARI = "safari";
-
-    private static WebDriver driver;
-
-    // Get a new WebDriver Instance.
-    // There are various implementations for this depending on browser. The required BROWSER can be set as an environment variable.
-    // Refer http://getgauge.io/documentation/user/current/managing_environments/README.html
+    private static final String WINDOW_WIDTH = "1440";
+    private static final String WINDOW_HEIGHT = "900";
+    private static final String WINDOW_SIZE = "--window-size=" + WINDOW_WIDTH + "x" + WINDOW_HEIGHT;
 
     public static WebDriver getDriver(String browserName) {
         if (browserName == null) {
-            System.out.println("Browser name is null. Initializing chrome driver instance.....");
+            System.out.println("Browser name is null.\nInitializing a chrome driver instance.........");
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
         }
-
-        if (HEADLESS_CHROME.equals(browserName.toLowerCase())) {
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--headless");
-            chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
-            chromeOptions.addArguments("disable-infobars"); // disabling infobars
-            chromeOptions.addArguments("--disable-extensions"); // disabling extensions
-            chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
-            chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-            chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
-            WebDriverManager.chromedriver().setup();
-            return new ChromeDriver(chromeOptions);
-        }
-        else if (FIREFOX.equals(browserName.toLowerCase())) {
-            WebDriverManager.firefoxdriver().setup();
-            return new FirefoxDriver();
-        }
-        else if (HEADLESS_FIREFOX.equals(browserName.toLowerCase())) {
-            FirefoxBinary firefoxBinary = new FirefoxBinary();
-            firefoxBinary.addCommandLineOptions("--headless");
-            firefoxBinary.addCommandLineOptions(WINDOW_SIZE);
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.setBinary(firefoxBinary);
-            WebDriverManager.firefoxdriver().setup();
-            return new FirefoxDriver(firefoxOptions);
-        }
-        else if (IE.equals(browserName.toLowerCase())) {
-            WebDriverManager.iedriver().setup();
-            return new InternetExplorerDriver();
-        }
-        else if (EDGE.equals(browserName.toLowerCase())) {
-            WebDriverManager.edgedriver().setup();
-            return new EdgeDriver();
-        }
-        else if (SAFARI.equals(browserName.toLowerCase())) {
-            driver = new SafariDriver();
-            return new SafariDriver();
-        }
-        else {
-            System.out.println("Unrecognized browser name found. Initializing chrome driver instance.....");
-            WebDriverManager.chromedriver().setup();
-            return new ChromeDriver();
+        switch (browserName.toLowerCase()) {
+            case CHROME:
+                WebDriverManager.chromedriver().setup();
+                return new ChromeDriver();
+            case HEADLESS_CHROME:
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
+                chromeOptions.addArguments("disable-infobars"); // disabling info bars
+                chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+                chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
+                chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+                chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
+                WebDriverManager.chromedriver().setup();
+                return new ChromeDriver(chromeOptions);
+            case FIREFOX:
+                WebDriverManager.firefoxdriver().setup();
+                return new FirefoxDriver();
+            case HEADLESS_FIREFOX:
+                FirefoxBinary firefoxBinary = new FirefoxBinary();
+                firefoxBinary.addCommandLineOptions("--headless");
+                firefoxBinary.addCommandLineOptions(WINDOW_SIZE);
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.setBinary(firefoxBinary);
+                WebDriverManager.firefoxdriver().setup();
+                return new FirefoxDriver(firefoxOptions);
+            case IE:
+                WebDriverManager.iedriver().setup();
+                return new InternetExplorerDriver();
+            case EDGE:
+                WebDriverManager.edgedriver().setup();
+                return new EdgeDriver();
+            case SAFARI:
+                return new SafariDriver();
+            default:
+                System.out.println("Given browser name \"" + browserName + "\" is not supported!\nInitializing a chrome driver instance.........");
+                WebDriverManager.chromedriver().setup();
+                return new ChromeDriver();
         }
     }
-
 
 }

@@ -15,7 +15,6 @@ import org.openqa.selenium.WebDriver;
  * Description     : This is an example of how to use maxsoft-webdrivermanager for firefox headless driver
  **/
 
-
 public class FireFoxHeadlessDriverTest extends TestBase {
 
     // Holds the WebDriver instance
@@ -38,6 +37,5 @@ public class FireFoxHeadlessDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 
 }

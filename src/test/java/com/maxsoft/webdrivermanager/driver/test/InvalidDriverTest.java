@@ -16,7 +16,6 @@ import org.openqa.selenium.remote.BrowserType;
  * Description     : This is an example of how to use maxsoft-webdrivermanager for invalid driver
  **/
 
-
 public class InvalidDriverTest extends TestBase {
 
     // Holds the WebDriver instance
@@ -25,7 +24,7 @@ public class InvalidDriverTest extends TestBase {
     // Initialize an invalid driver instance
     @Before
     public void initializeDriver() {
-        driver = DriverFactory.getDriver("invalid");
+        driver = DriverFactory.getDriver("tor");
         driver.manage().window().maximize();
     }
 
@@ -39,6 +38,5 @@ public class InvalidDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 
 }

@@ -5,7 +5,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.BrowserType;
 
 /**
  * Project Name    : maxsoft-webdriver-manager
@@ -15,7 +14,6 @@ import org.openqa.selenium.remote.BrowserType;
  * Time            : 10:33 AM
  * Description     : This is an example of how to use maxsoft-webdrivermanager for edge driver
  **/
-
 
 public class EdgeDriverTest extends TestBase {
 
@@ -31,7 +29,7 @@ public class EdgeDriverTest extends TestBase {
 
     @Test
     public void testEdgeDriver() {
-        testDriver(driver, BrowserType.EDGE.toLowerCase());
+        testDriver(driver, "msedge");
     }
 
     // Close the edge driver instance
@@ -39,6 +37,5 @@ public class EdgeDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 
 }
