@@ -34,7 +34,6 @@ public class DriverFactory {
     private static final String WINDOW_SIZE = "--window-size=" + WINDOW_WIDTH + "x" + WINDOW_HEIGHT;
 
     public static WebDriver getDriver(String browserName) {
-
         if (browserName == null) {
             System.out.println("Browser name is null.\nInitializing a chrome driver instance.........");
             WebDriverManager.chromedriver().setup();
