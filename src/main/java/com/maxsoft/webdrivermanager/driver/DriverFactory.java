@@ -66,7 +66,7 @@ public class DriverFactory {
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver(firefoxOptions);
             case IE:
-                WebDriverManager.iedriver().setup();
+                System.setProperty("webdriver.ie.driver", "./src/main/resources/IEDriverServer.exe");
                 return new InternetExplorerDriver();
             case EDGE:
                 WebDriverManager.edgedriver().setup();
