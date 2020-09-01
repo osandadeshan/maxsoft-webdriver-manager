@@ -1,5 +1,6 @@
 package com.maxsoft.webdrivermanager.driver;
 
+import com.maxsoft.webdrivermanager.util.IEDriverDownloader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -66,7 +67,12 @@ public class DriverFactory {
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver(firefoxOptions);
             case IE:
-                System.setProperty("webdriver.ie.driver", "./src/main/resources/IEDriverServer.exe");
+                IEDriverDownloader iEDriverDownloader = new IEDriverDownloader();
+                iEDriverDownloader
+                        .createDirectoryIfNotExists()
+                        .hideDirectory()
+                        .downloadIEDriverIfNotExists();
+                System.setProperty("webdriver.ie.driver", iEDriverDownloader.getIeDriverExePath());
                 return new InternetExplorerDriver();
             case EDGE:
                 WebDriverManager.edgedriver().setup();
