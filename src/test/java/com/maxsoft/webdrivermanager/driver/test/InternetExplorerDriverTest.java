@@ -38,5 +38,4 @@ public class InternetExplorerDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 }

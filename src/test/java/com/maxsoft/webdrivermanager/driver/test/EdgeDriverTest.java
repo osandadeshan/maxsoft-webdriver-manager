@@ -37,5 +37,4 @@ public class EdgeDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 }

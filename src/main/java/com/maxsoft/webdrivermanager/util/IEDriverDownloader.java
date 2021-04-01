@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 
 public class IEDriverDownloader {
 
-    private String driversPath, ieDriverExePath;
+    private final String driversPath, ieDriverExePath;
 
     public IEDriverDownloader() {
         driversPath = String.valueOf(File.listRoots()[0].toString().charAt(0)).concat(":/Drivers");
@@ -69,5 +69,4 @@ public class IEDriverDownloader {
         }
         return this;
     }
-
 }

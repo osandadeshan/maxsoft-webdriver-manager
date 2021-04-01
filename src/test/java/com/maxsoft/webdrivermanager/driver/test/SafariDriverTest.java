@@ -37,5 +37,4 @@ public class SafariDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 }

@@ -38,5 +38,4 @@ public class ChromeDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 }

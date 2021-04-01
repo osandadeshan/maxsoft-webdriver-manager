@@ -24,5 +24,4 @@ public class TestBase {
         driver.get("http://automationpractice.com/");
         Assert.assertEquals("My Store", driver.getTitle());
     }
-
 }
