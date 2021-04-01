@@ -38,5 +38,4 @@ public class NullDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 }

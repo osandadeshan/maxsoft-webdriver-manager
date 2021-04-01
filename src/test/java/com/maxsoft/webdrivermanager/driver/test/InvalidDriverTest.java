@@ -38,5 +38,4 @@ public class InvalidDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 }

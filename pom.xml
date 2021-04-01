@@ -6,7 +6,7 @@
 
     <groupId>com.maxsoft.webdrivermanager</groupId>
     <artifactId>maxsoft-webdriver-manager</artifactId>
-    <version>1.0.2</version>
+    <version>1.2.0</version>
 
     <build>
         <plugins>
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>4.2.0</version>
+            <version>4.3.1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

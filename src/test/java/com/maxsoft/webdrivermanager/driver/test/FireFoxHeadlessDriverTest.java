@@ -37,5 +37,4 @@ public class FireFoxHeadlessDriverTest extends TestBase {
     public void closeDriver() {
         driver.quit();
     }
-
 }

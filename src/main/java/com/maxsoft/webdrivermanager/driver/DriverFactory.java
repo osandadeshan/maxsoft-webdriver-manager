@@ -30,8 +30,8 @@ public class DriverFactory {
     public static final String IE = "ie";
     public static final String EDGE = "edge";
     public static final String SAFARI = "safari";
-    private static final String WINDOW_WIDTH = "1440";
-    private static final String WINDOW_HEIGHT = "900";
+    private static final String WINDOW_WIDTH = "1920";
+    private static final String WINDOW_HEIGHT = "1080";
     private static final String WINDOW_SIZE = "--window-size=" + WINDOW_WIDTH + "x" + WINDOW_HEIGHT;
 
     public static WebDriver getDriver(String browserName) {
@@ -47,12 +47,13 @@ public class DriverFactory {
             case HEADLESS_CHROME:
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
-                chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
-                chromeOptions.addArguments("disable-infobars"); // disabling info bars
-                chromeOptions.addArguments("--disable-extensions"); // disabling extensions
-                chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
-                chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-                chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
+                chromeOptions.addArguments("start-maximized"); // Opening Browser in maximized mode
+                chromeOptions.addArguments("disable-infobars"); // Disabling info bars
+                chromeOptions.addArguments("--disable-extensions"); // Disabling extensions
+                chromeOptions.addArguments("--disable-gpu"); // Applicable to Windows OS only
+                chromeOptions.addArguments("--disable-dev-shm-usage"); // Overcoming limited resource problems
+                chromeOptions.addArguments("--no-sandbox"); // Bypassing OS security model
+                chromeOptions.addArguments(WINDOW_SIZE); // Increasing the headless window size
                 WebDriverManager.chromedriver().setup();
                 return new ChromeDriver(chromeOptions);
             case FIREFOX:
@@ -85,5 +86,4 @@ public class DriverFactory {
                 return new ChromeDriver();
         }
     }
-
 }
