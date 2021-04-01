@@ -45,4 +45,4 @@ The main reason for developing this library is to provide an easy way for qualit
 <br />
 
 ## Copyright
-Copyright 2020 MaxSoft.
+Copyright 2021 MaxSoft.
